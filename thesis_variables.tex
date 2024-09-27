@@ -1,46 +1,37 @@
 % % details.tex
 
 % % Student's personal and thesis information
-
-% \newcommand{\ttitle}{Your Thesis Title Here}
-% \newcommand{\authornames}{Your Name Here}
-% \newcommand{\supnameA}{Supervisor Name Here}
-% \newcommand{\degreename}{Your Degree Name Here}
-% \newcommand{\univname}{Your University Name Here}
-% \newcommand{\deptname}{Your Department Name Here}
-% \newcommand{\facname}{Your Faculty Name Here}
-% \newcommand{\facnum}{Z-1165}
-
 % Path to chapters folder
 \newcommand{\chapterpath}{Chapters/}
 %----------------------------------------------------------------------------------------
 %	DOCUMENT VARIABLES
 %----------------------------------------------------------------------------------------
-% variables.tex
-\usepackage{expl3}
+% % details.tex
 
-% Define the main supervisor
-\newcommand{\supervisor}{Dr. John Doe}
+% % Student's personal and thesis information
 
-% Define the co-supervisors (comma-separated list)
-\newcommand{\cosupervisors}{Prof. Alice Smith, Dr. Bob Johnson, Dr. Carol Williams}
-
-\thesistitle{A Novel Risk-Aware User Authentication Scheme} % Your thesis title
-\supervisorA{\href{https://www.amu.ac.in/faculty/computer-engineering/mohammad-sarosh-umar}{Prof. Mohammed Sarosh Umar}} % Supervisor 1
-\supervisorB{\href{https://www.amu.ac.in/faculty/}{Prof. XYZ}} % Supervisor 2
+\thesistitle{Your thesis title} % Your thesis title
+\supervisorA{\href{https://www.amu.ac.in/faculty/}{Prof. XYZ}} % Main Supervisor and his webpage on amu website
+\supervisorB{\href{https://www.amu.ac.in/faculty/}{Prof. PQR}} % co Supervisor and his webpage on amu website
+\departmentA{Department of Computer Enginbeering}% department to which SupervisorA belongs
+\departmentB{Department of Electronics Enginbeering} % department to which SupervisorB belongs
+\universityA{BHU Varanasi}%Univeristy to which SupervisorA belongs
+\universityB{AMU Aligarh}%Univeristy to which SupervisorB belongs
 \examiner{Dr. Jane Doe} % Examiner's name
 \degreeprogram{Doctor of Philosophy} % Degree name
-\authors{\texorpdfstring{\href{https://github.com/misbahgit}{Misbah Urrahman Siddiqui}}{Misbah Urrahman Siddiqui}} % Author's name
+\authors{\texorpdfstring{\href{https://github.com/misbahgit}{Misbah Urrahman Siddiqui}}{Misbah Urrahman Siddiqui}} % Author's name and his website address
 \addresses{University Women's Polytechnic AMU Aligarh} % Address
 \subject{Computer Engineering} % Subject area
-\keywords{Authentication, Password, Graphical Password, Security, Intruder, Pseudo Random Password, Risk aware} % Keywords
+\keywords{Authentication, Password, Graphical Password, Security, Intruder, Risk aware} % Keywords
 \university{\texorpdfstring{\href{http://www.amu.ac.in}{Aligarh Muslim University Aligarh}}{Aligarh Muslim University Aligarh}} % University name
 \UNIVERSITY{\texorpdfstring{\href{http://www.amu.ac.in}{\MakeUppercase{Aligarh Muslim University Aligarh}}}{\MakeUppercase{Aligarh Muslim University Aligarh}}} % University in uppercase
 \department{\texorpdfstring{\href{http://www.amu.ac.in/department/computer-engineering}{Computer Engineering Department}}{Computer Engineering Department}} % Department name
 \DEPARTMENT{\texorpdfstring{\href{http://www.amu.ac.in/department/computer-engineering}{\MakeUppercase{Computer Engineering Department}}}{\MakeUppercase{Computer Engineering Department}}} % Department in uppercase
-\faculty{\texorpdfstring{\href{https://www.amu.ac.in/department/computer-engineering}{Faculty of Engineering \& Technology}}{Faculty of Engineering \& Technology}} % Faculty name
-\FACULTY{\texorpdfstring{\href{https://www.amu.ac.in/department/computer-engineering}{\MakeUppercase{Faculty of Engineering \& Technology}}}{\MakeUppercase{Faculty of Engineering \& Technology}}} % Faculty in uppercase
-\submissiondate{September 2024} % Submission date
-\enrnum{Z-1165} % faculty number
-\facnum{10PEM14}
-\newcommand{\numcosupervisors}{2} % Adjust this number as per your needs
+\faculty{Faculty of Engineering \& Technology} % Faculty name and its url
+\FACULTY{\MakeUppercase{Faculty of Engineering \& Technology}} % Faculty in uppercase
+\submissiondate{\today} % Submission date
+\enrnum{BB1234} % faculty number
+\facnum{24PHD01}
+%\numcosupervisors{2} % Adjust this number as per your needs
+% Define the number of co-supervisors
+\newcommand{\numcosupervisors}{1} % Adjust this number as per your needs put 0 if none
