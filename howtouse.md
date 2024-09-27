@@ -21,90 +21,60 @@ Start by downloading the LaTeX thesis template package. The template includes al
 ### 2. Files and Directory Structure
 
 The package includes the following files and directories:
-```
 /YourThesisProject 
-│ 
-├── thesis.tex % Main file to compile your thesis 
-├── thesis.cls % The class file that handles formatting
-├── variables.tex % File to input personal and thesis details 
-├── chapters/ % Directory for your thesis chapters 
-│   ├── chapter1.tex % Example chapter  
-│   ├── chapter2.tex 
-│   └── ... 
-├── appendices/ % Directory for appendices (optional)
-├── bibliography.bib % BibTeX file for references (optional) 
-├── Pictures/ % Directory to store all figures and images 
-│   └── figure1.png 
-└── howtouse.md % This instruction file
-```
+- │ 
+- ├── thesis.tex % Main file to compile your thesis 
+- ├── thesis.cls % The class file that handles formatting
+- ├── variables.tex % File to input personal and thesis details 
+- ├── chapters/ % Directory for your thesis chapters 
+- │  - ├── chapter1.tex % Example chapter  
+- │  - ├── chapter2.tex 
+- │  - └── ... 
+- ├── appendices/ % Directory for appendices (optional)
+- ├── bibliography.bib % BibTeX file for references (optional) 
+- ├── Pictures/ % Directory to store all figures and images 
+- │  - └── figure1.png 
+- └── howtouse.md % This instruction file
 
 ### 3. Editing the Variables File
 
 To personalize the thesis, you only need to modify the `variables.tex` file. This file contains all the variables like your name, thesis title, supervisor's name, and other necessary information.
 
-Open `variables.tex` and fill in the required fields as shown below:
-
+Open `thesis_variables.tex` and fill in the required fields as shown below:
 ```latex
-% variables.tex
+% % details.tex
 
-% General Information
-\def\thesistitle{Your Thesis Title}
-\def\authorname{Your Full Name}
-\def\regno{Your Registration Number}
-\def\degree{Degree Name (e.g., PhD, MPhil)}
-\def\deptname{Your Department}
-\def\univname{Aligarh Muslim University}
-\def\submissiondate{Month, Year}
+% % Student's personal and thesis information
 
-% Supervisor Details
-\def\supnameA{Dr. Supervisor's Name}
-\def\supdeptA{Department of Supervisor}
-\def\supunivA{Aligarh Muslim University}
+\thesistitle{Your thesis title} % Your thesis title  
+\supervisorA{\href{https://www.amu.ac.in/faculty/}{Prof. XYZ}} % Main Supervisor and his webpage on amu website  
+\supervisorB{\href{https://www.amu.ac.in/faculty/}{Prof. PQR}} % co Supervisor and his webpage on amu website  
+\departmentA{Department of Computer Enginbeering}% department to which SupervisorA belongs  
+\departmentB{Department of Electronics Enginbeering} % department to which SupervisorB belongs  
+\universityA{BHU Varanasi}%Univeristy to which SupervisorA belongs  
+\universityB{AMU Aligarh}%Univeristy to which SupervisorB belongs  
+\examiner{Dr. Jane Doe} % Examiner's name  
+\degreeprogram{Doctor of Philosophy} % Degree name  
+\authors{\texorpdfstring{\href{https://github.com/misbahgit}{Misbah Urrahman Siddiqui}}{Misbah Urrahman Siddiqui}} % Author's name and his website address  
+\addresses{University Women's Polytechnic AMU Aligarh} % Address  
+\subject{Computer Engineering} % Subject area  
+\keywords{Authentication, Password, Graphical Password, Security, Intruder, Risk aware} % Keywords  
+\university{\texorpdfstring{\href{http://www.amu.ac.in}{Aligarh Muslim University Aligarh}}{Aligarh Muslim University Aligarh}} % University name  
+\UNIVERSITY{\texorpdfstring{\href{http://www.amu.ac.in}{\MakeUppercase{Aligarh Muslim University Aligarh}}}{\MakeUppercase{Aligarh Muslim University Aligarh}}} % University in uppercase  
+\department{\texorpdfstring{\href{http://www.amu.ac.in/department/computer-engineering}{Computer Engineering Department}}{Computer Engineering Department}} % Department name  
+\DEPARTMENT{\texorpdfstring{\href{http://www.amu.ac.in/department/computer-engineering}{\MakeUppercase{Computer Engineering Department}}}{\MakeUppercase{Computer Engineering Department}}} % Department in uppercase  
+\faculty{Faculty of Engineering \& Technology} % Faculty name and its url  
+\FACULTY{\MakeUppercase{Faculty of Engineering \& Technology}} % Faculty in uppercase  
+\submissiondate{\today} % Submission date  
+\enrnum{BB1234} % faculty number  
+\facnum{24PHD01}  
+%\numcosupervisors{2} % Adjust this number as per your needs  
+% Define the number of co-supervisors  
+\newcommand{\numcosupervisors}{1} % Adjust this number as per your needs  
 ```
 
-- /YourThesisProject 
-  - thesis.tex % Main file to compile your thesis 
-  - thesis.cls % The class file that handles formatting
-  - variables.tex % File to input personal and thesis details 
-  - chapters/ % Directory for your thesis chapters │
-      - chapter1.tex % Example chapter
-      - chapter2.tex
-      - ...
-  - appendices/ % Directory for appendices (optional)
-  - bibliography.bib % BibTeX file for references (optional)
-  - Pictures/ % Directory to store all figures and images
-      - figure1.png 
-  - howtouse.md % This instruction file
-
-### 3. Editing the Variables File
-
-To personalize the thesis, you only need to modify the `variables.tex` file. This file contains all the variables like your name, thesis title, supervisor's name, and other necessary information.
-
-Open `variables.tex` and fill in the required fields as shown below:
-
-```latex
-% variables.tex
-\thesistitle{ Your thesis title} % Your thesis title
-\supervisorA{\href{https://www.amu.ac.in/faculty/}{Prof. XYZ}} % Supervisor 1
-\supervisorB{\href{https://www.amu.ac.in/faculty/}{Prof. PQR}} % Supervisor 2
-\examiner{Examiner's name} % if available
-\degreeprogram{Degree Namey} % Degree name like , PhD, M. Tech. , M. Phil.
-\authors{\texorpdfstring{\href{https://github.com/misbahgit}{Misbah Urrahman Siddiqui}}{Misbah Urrahman Siddiqui}} % Author's name
-\addresses{University Women's Polytechnic AMU Aligarh} % Author's address
-\subject{Computer Engineering} % Subject area
-\keywords{Authentication, Password, Graphical Password, Security, Intruder, Pseudo Random Password, Risk aware} % Keywords
-\university{\texorpdfstring{\href{http://www.amu.ac.in}{Aligarh Muslim University Aligarh}}{Aligarh Muslim University Aligarh}} % University name
-\UNIVERSITY{\texorpdfstring{\href{http://www.amu.ac.in}{\MakeUppercase{Aligarh Muslim University Aligarh}}}{\MakeUppercase{Aligarh Muslim University Aligarh}}} % University in uppercase
-\department{\texorpdfstring{\href{http://www.amu.ac.in/department/computer-engineering}{Computer Engineering Department}}{Computer Engineering Department}} % Department name
-\DEPARTMENT{\texorpdfstring{\href{http://www.amu.ac.in/department/computer-engineering}{\MakeUppercase{Computer Engineering Department}}}{\MakeUppercase{Computer Engineering Department}}} % Department in uppercase
-\faculty{\texorpdfstring{\href{https://www.amu.ac.in/department/computer-engineering}{Faculty of Engineering \& Technology}}{Faculty of Engineering \& Technology}} % Faculty name
-\FACULTY{\texorpdfstring{\href{https://www.amu.ac.in/department/computer-engineering}{\MakeUppercase{Faculty of Engineering \& Technology}}}{\MakeUppercase{Faculty of Engineering \& Technology}}} % Faculty in uppercase
-\submissiondate{September 2024} % Submission month and year
-\enrnum{Z-1165} % Enrollment Number
-\facnum{10PEM14}% faculty number
-```
 #### Note: 
-You do not need to modify any other files for basic use. The Thesis.cls file will automatically format the content based on the variables you define.
+You do not need to modify any other files for basic use. The thesis.cls file will automatically format the content based on the variables you define.
 
 ### 4. Writing the Chapters
 The chapters/ directory contains separate files for each chapter of your thesis. You can edit these files to add your content. Each chapter file starts with the \chapter{} command.
@@ -115,7 +85,7 @@ For example, to start writing Chapter 1:
 \chapter{Introduction}
 ```
 This is where the content of your first chapter goes...
-You can create as many chapter files as necessary and then include them in the main.tex file.
+You can create as many chapter files as necessary and then include them in the main thesis.tex file.
 
 ### 5. Inserting Figures and Tables
 Figures: Store your figures and images in the Pictures/ directory. You can insert them into your thesis using the `\includegraphics{}` command. Example:
@@ -158,9 +128,9 @@ Alternatively, you can manually create a bibliography section in LaTeX using `\b
 }
 ```
 ### 7. Compiling the Document
-Once you've added your content and made necessary changes to variables.tex, compile the main file main.tex. You can use any LaTeX editor (such as TeXShop, TeXworks, or Overleaf) or the command line.
+Once you've added your content and made necessary changes to variables.tex, compile the main file thesis.tex. You can use any LaTeX editor (such as TeXShop, TeXworks, or Overleaf) or the command line.
 
-To compile the document on command line, use the following commands:
+To compile the document, use the following commands:
 pdflatex thesis.tex
 bibtex thesis
 pdflatex thesis.tex
