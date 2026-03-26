@@ -143,42 +143,30 @@
 %------------------------------------------------------
 % thesis.cls
 
-% Command to print co-supervisors
+% Function to print co-supervisors based on the number
 \newcommand{\printcosupervisors}{
     \ifnum\numcosupervisors>0
-        \textbf{Co-Supervisors:}\\
+    \begin{minipage}{0.49\textwidth}
+        \begin{flushleft}
+            \textbf{\supnameB} \\
+            \deptB\\
+            \univB
+        \end{flushleft}
+    \end{minipage}
     \fi
-
-    % Co-Supervisor 1
-    \ifnum\numcosupervisors>0
-        \cosupervisornameA\\
-        \cosupervisordeptA\\
-        \cosupervisorunivA\\
-        \vspace{1em}
-    \fi
-
-    % Co-Supervisor 2
-    \ifnum\numcosupervisors>1
-        \cosupervisornameB\\
-        \cosupervisordeptB\\
-        \cosupervisorunivB\\
-        \vspace{1em}
-    \fi
-
-    % Add more co-supervisors logic if needed for further supervisors
-    % \ifnum\numcosupervisors>2
-    %     \cosupervisornameC\\
-    %     \cosupervisordeptC\\
-    %     \cosupervisorunivC\\
-    %     \vspace{1em}
-    % \fi
 }
-
 %----------------------------------------------------------------------------------------
 %	DOCUMENT VARIABLES COMMANDS
 %----------------------------------------------------------------------------------------
 \newcommand*{\supervisorA}[1]{\def\supnameA{#1}}
 \newcommand*{\supervisorB}[1]{\def\supnameB{#1}}
+\newcommand*{\departmentA}[1]{\def\deptA{#1}}
+\newcommand*{\urldeptA}[1]{\def\urldeptA{#1}}
+\newcommand*{\departmentB}[1]{\def\deptB{#1}}
+\newcommand*{\urldeptB}[1]{\def\urldeptB{#1}}
+\newcommand*{\universityA}[1]{\def\univA{#1}}
+\newcommand*{\universityB}[1]{\def\univB{#1}}
+
 \newcommand*{\thesistitle}[1]{\def\ttitle{#1}}
 \newcommand*{\examiner}[1]{\def\examname{#1}}
 \newcommand*{\degreeprogram}[1]{\def\degreename{#1}}
@@ -190,7 +178,11 @@
 \newcommand*{\DEPARTMENT}[1]{\def\DEPTNAME{#1}}
 \newcommand*{\group}[1]{\def\groupname{#1}}
 \newcommand*{\GROUP}[1]{\def\GROUPNAME{#1}}
+\newcommand*{\college}[1]{\def\collegename{#1}}
+\newcommand*{\COLLEGE}[1]{\def\COLLEGENAME{#1}}
+
 \newcommand*{\faculty}[1]{\def\facname{#1}}
+\newcommand*{\facultyurl}[1]{\def\facurl{#1}}
 \newcommand*{\FACULTY}[1]{\def\FACNAME{#1}}
 \newcommand*{\subject}[1]{\def\subjectname{#1}}
 \newcommand*{\keywords}[1]{\def\keywordnames{#1}}
@@ -199,7 +191,7 @@
 \newcommand*{\enrnum}[1]{\def\enrnum{#1}}
 \newcommand\Declaration[1]{
 \btypeout{Certificate}
-%\addtotoc{Certificate}
+\addtotoc{Certificate}% comment this to remove from TOC
 \thispagestyle{plain}
 %\null\vfil
 %\vskip 60\p@
@@ -211,7 +203,7 @@
 }
 \newcommand\StudentDeclaration[1]{
 \btypeout{Declaration}
-%\addtotoc{Declaration}
+\addtotoc{Declaration} % comment this to remove from TOC
 \thispagestyle{plain}
 %\null\vfil
 %\vskip 60\p@
@@ -225,6 +217,7 @@
 %	INCLUDE DOCUMENT VARIABLES FROM EXTERNAL FILE
 %----------------------------------------------------------------------------------------
 \input{thesis_variables.tex} % Make sure thesis_variables.tex is in the same directory as Thesis.cls
+
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -264,7 +257,7 @@
       \bigskip
       \bigskip
       \bigskip
-      {\Large \submissiondate \par}
+      {\Large \subdate \par}
       \bigskip
     \end{center}
     \par
@@ -291,6 +284,7 @@
 \newenvironment{abstract}
 {
   \btypeout{Abstract Page}
+  \addtotoc{Abstract}
   \thispagestyle{empty}
   \begin{flushleft}
     \setlength{\parskip}{0pt}
@@ -304,7 +298,7 @@
     Thesis supervisors: \textbf{\supnameA} 
     % and \textbf{\supnameB} % Uncomment if supervisorB is defined
     \\
-    Month and year of thesis submission: \textbf{\submissiondate} \\[0.4cm]
+    Date of thesis submission: \textbf{\today} \\[0.4cm]
     \HRule \\[1.5cm] % Horizontal line	
   
   \end{flushleft}
@@ -327,7 +321,7 @@
 \newcounter{dummy}
 \newcommand\addtotoc[1]{
 \refstepcounter{dummy}
-\addcontentsline{toc}{chapter}{#1}}
+\addcontentsline{toc}{chapter}{#1}} % comment this to remove from TOC
 
 \renewcommand\tableofcontents{
 \btypeout{Table of Contents}
